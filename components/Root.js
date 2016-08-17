@@ -1,31 +1,42 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
+  Navigator,
   StyleSheet,
   Text,
   Image,
-  View
+  View,
+  LayoutAnimation,
+  TouchableHighlight,
 } from 'react-native';
+// import clrs from '../utilites/clrs';
 
 export default class Root extends Component {
+
+  onButtonPress() {
+    this.props.navigator.push({
+      id: 'Second'
+    });
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-      <Image source={{uri: 'http://reactor.apppresser.com/wp-content/uploads/2015/05/ionic-logo-300-300x248.png'}}
-        style={styles.canvas} />
-        <Image source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}
-          style={styles.canvastwo} />
-        <Text style={styles.welcome}>
-          React Native Vs Ionic
+      // <View style={styles.container}>
+      <View style={{flex: 1,justifyContent: 'center', backgroundColor: "#292C34",}}>
+        <Text style={styles.versus}>
+              Ionic 2 Vs React Native
         </Text>
-        <Text style={styles.instructions}>
-          Which of the hybrids best fits your project?
+        <Image source={{uri: 'http://reactionic.github.io/img/reactionic.png'}}
+            style={styles.canvas} />
+        <Text style={styles.whichIS}>
+            Which hybrids best fits your project?
         </Text>
-        <Text style={styles.instructions}>
-          Here we can find the simple,{'\n'}
-          straightforward answer.
-        </Text>
+        <TouchableHighlight onPress={this.onButtonPress.bind(this)} style={styles.button} >
+        <Text style={styles.begin}>
+        Lets get to it!</Text>
+        </TouchableHighlight>
       </View>
+
     );
   }
 }
@@ -38,31 +49,54 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   canvas: {
-     position: 'absolute',
-     top: 330,
-     left: 0,
-     bottom: 0,
-     right: 0,
+  flex: 4,
+  borderWidth: 20,
+  borderColor: '#292C34',
    },
-   canvastwo: {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      bottom: 290,
-      right: 0,
-    },
-  welcome: {
-    fontSize: 25,
+  canvastwo: {
+    flex: 2,
+  },
+  versus: {
+    fontSize: 20,
+    fontWeight: 'bold',
     textAlign: 'center',
-    margin: 10,
     color: '#fff',
-    fontFamily: 'Roboto'
+    fontFamily: 'Roboto',
+    paddingTop: 10,
+    flex: .5,
+    backgroundColor: '#4E8EF7',
   },
-  instructions: {
+  whichIS: {
+    fontSize: 20,
+    fontWeight: 'bold',
     textAlign: 'center',
-    color: '#2b2b2b',
-    marginBottom: 5,
+    backgroundColor: '#00D8FF',
+    borderRadius: 4,
+    borderWidth: 0.5,
+    borderColor: '#fff',
+    paddingTop: 10,
+    flex: .5,
+    color: '#fff',
   },
+  button: {
+    height: 40,
+    width: 150,
+    marginLeft: 100,
+    marginTop: 50,
+    marginBottom: 50,
+    backgroundColor: "#00D8FF",
+    borderRadius: 40,
+    borderWidth: 1,
+    borderColor: '#0093ad',
+  },
+  begin: {
+    flex: 1,
+    fontSize: 20,
+    paddingTop: 4,
+    fontWeight: 'bold',
+    color: '#fff',
+    textAlign: 'center',
+  }
 });
 
 AppRegistry.registerComponent('newApp', () => newApp);
