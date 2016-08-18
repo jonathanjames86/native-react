@@ -10,6 +10,7 @@ import {
 
 import Root from './components/Root';
 import TestPage from './components/testPage';
+import Spotify from './components/apiTest';
 
 export default class newApp extends Component {
 
@@ -19,6 +20,9 @@ export default class newApp extends Component {
       }
       if (route.name === 'testPage') {
         return <TestPage navigator={navigator}/>
+      }
+      if (route.name === 'spotify') {
+        return <Spotify navigator={navigator}/>
       }
     }
   render() {
