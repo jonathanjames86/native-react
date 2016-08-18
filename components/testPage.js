@@ -1,38 +1,47 @@
-import React, {
-  Component,
+import React, { Component } from 'react';
+import {
   StyleSheet,
   Text,
+  Image,
   View,
-}from 'react-native';
-
-export class testPage extends Component {
+  LayoutAnimation,
+  TouchableHighlight,
+} from 'react-native';
+export default class TestPage extends Component {
   render(){
     return(
-      <View style={styles.container}
+      <View style={{flex: 1,justifyContent: 'center', backgroundColor: "#0E0F1A",}}>
         <Text style={styles.testText}>
-          Here is your Test page homie.
+          Testing your Device
         </Text>
+        <Text style={styles.testText}>
 
+        </Text>
       </View>
+
     )
   }
 
 }
-
+debugger;
 const styles = StyleSheet.create({
   container: {
-    felx: 1,
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#2B2B2B'
   },
   testText: {
     flex: 1,
-    fontSize: 35,
+    fontSize: 15,
+    backgroundColor: '#20212B',
     color: '#fff',
+    paddingTop: 20,
+    marginBottom: 20,
+    textAlign: 'center',
   },
 
 
 });
 
-module.exports = testPage;
+export default TestPage

@@ -15,25 +15,25 @@ export default class Root extends Component {
 
   onButtonPress() {
     this.props.navigator.push({
-      id: 'Second'
-    });
+      name: 'testPage'
+    })
   }
 
   render() {
     return (
       // <View style={styles.container}>
-      <View style={{flex: 1,justifyContent: 'center', backgroundColor: "#292C34",}}>
+      <View style={{flex: 1,justifyContent: 'center', backgroundColor: "#0E0F1A",}}>
         <Text style={styles.versus}>
               Ionic 2 Vs React Native
         </Text>
         <Image source={{uri: 'http://reactionic.github.io/img/reactionic.png'}}
             style={styles.canvas} />
         <Text style={styles.whichIS}>
-            Which hybrids best fits your project?
+            Which hybrid best fits your project?
         </Text>
-        <TouchableHighlight onPress={this.onButtonPress.bind(this)} style={styles.button} >
+        <TouchableHighlight onPress={() => this.onButtonPress()} style={styles.button} >
         <Text style={styles.begin}>
-        Lets get to it!</Text>
+        Test your device</Text>
         </TouchableHighlight>
       </View>
 
@@ -46,31 +46,31 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#0E0F1A',
   },
   canvas: {
   flex: 4,
   borderWidth: 20,
-  borderColor: '#292C34',
+  borderColor: '#0E0F1A',
    },
   canvastwo: {
     flex: 2,
   },
   versus: {
     fontSize: 20,
-    fontWeight: 'bold',
     textAlign: 'center',
     color: '#fff',
     fontFamily: 'Roboto',
     paddingTop: 10,
     flex: .5,
-    backgroundColor: '#4E8EF7',
+    backgroundColor: '#20212B',
+    borderBottomWidth: 2,
+    borderColor: '#fff',
   },
   whichIS: {
     fontSize: 20,
-    fontWeight: 'bold',
     textAlign: 'center',
-    backgroundColor: '#00D8FF',
+    backgroundColor: '#20212B',
     borderRadius: 4,
     borderWidth: 0.5,
     borderColor: '#fff',
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     marginLeft: 100,
     marginTop: 50,
     marginBottom: 50,
-    backgroundColor: "#00D8FF",
+    backgroundColor: "#0B78E4",
     borderRadius: 40,
     borderWidth: 1,
     borderColor: '#0093ad',
@@ -93,10 +93,9 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 20,
     paddingTop: 4,
-    fontWeight: 'bold',
     color: '#fff',
     textAlign: 'center',
   }
 });
 
-AppRegistry.registerComponent('newApp', () => newApp);
+module.exports = Root;

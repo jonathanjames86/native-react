@@ -1,63 +1,54 @@
-// /**
-//  * Sample React Native App
-//  * https://github.com/facebook/react-native
-//  * @flow
-//  */
-//
+'use strict';
+import React, { Component } from 'react';
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  Navigator,
+} from 'react-native';
 
-import {AppRegistry} from 'react-native';
 import Root from './components/Root';
+import TestPage from './components/testPage';
 
-AppRegistry.registerComponent('newApp',  function () {
-  return Root;
+export default class newApp extends Component {
+
+    renderScence(route, navigator){
+      if (route.name === 'Root') {
+        return <Root navigator={navigator}/>
+      }
+      if (route.name === 'testPage') {
+        return <TestPage navigator={navigator}/>
+      }
+    }
+  render() {
+    return (
+      <Navigator
+        style={{ flex:1 }}
+        initialRoute = {{name: 'Root'}}
+        renderScene={ this.renderScence }/>
+    );
+  }
+
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
 });
 
-
-
-// import React, { Component } from 'react';
-// import {
-//   AppRegistry,
-//   StyleSheet,
-//   Text,
-//   View
-// } from 'react-native';
-//
-// class newApp extends Component {
-//   render() {
-//     return (
-//       <View style={styles.container}>
-//         <Text style={styles.welcome}>
-//           i am the mighty PUTNAM!
-//         </Text>
-//         <Text style={styles.instructions}>
-//           I wish I was as cool as Joe.
-//         </Text>
-//         <Text style={styles.instructions}>
-//           Double tap R on your keyboard to reload,{'\n'}
-//           Shake or press menu button for dev menu
-//         </Text>
-//       </View>
-//     );
-//   }
-// }
-//
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     backgroundColor: '#F5FCFF',
-//   },
-//   welcome: {
-//     fontSize: 20,
-//     textAlign: 'center',
-//     margin: 10,
-//   },
-//   instructions: {
-//     textAlign: 'center',
-//     color: '#333333',
-//     marginBottom: 5,
-//   },
-// });
-//
-// AppRegistry.registerComponent('newApp', () => newApp);
+AppRegistry.registerComponent('newApp', () => newApp);
