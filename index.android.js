@@ -10,9 +10,14 @@ import {
 
 import Root from './components/Root';
 import TestPage from './components/testPage';
-import Spotify from './components/apiTest';
+import Spotify from './components/spotify/apiTest';
+import Artist from './components/spotify/Artist';
+import DbTest from './components/dbTest';
+import UploadTest from './components/uploadTest';
+import Results from './components/results';
 
 export default class newApp extends Component {
+
 
     renderScence(route, navigator){
       if (route.name === 'Root') {
@@ -21,9 +26,19 @@ export default class newApp extends Component {
       if (route.name === 'testPage') {
         return <TestPage navigator={navigator}/>
       }
+      if (route.name === 'dbTest') {
+        return <DbTest navigator={navigator}/>
+      }
       if (route.name === 'spotify') {
         return <Spotify navigator={navigator}/>
       }
+      if (route.name === 'upLoad') {
+        return <UploadTest navigator={navigator}/>
+      }
+      if (route.name === 'results') {
+        return <Results navigator={navigator}/>
+      }
+      return <Artist url={ route.url } />;
     }
   render() {
     return (
@@ -35,24 +50,5 @@ export default class newApp extends Component {
   }
 
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
 
 AppRegistry.registerComponent('newApp', () => newApp);

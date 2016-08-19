@@ -21,7 +21,6 @@ export default class Root extends Component {
 
   render() {
     return (
-      // <View style={styles.container}>
       <View style={{flex: 1,justifyContent: 'center', backgroundColor: "#0E0F1A",}}>
         <Text style={styles.versus}>
               Ionic 2 Vs React Native

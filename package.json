@@ -6,6 +6,12 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
+    "babel-eslint": "^6.1.2",
+    "eslint": "^3.3.1",
+    "eslint-config-defaults": "^9.0.0",
+    "eslint-plugin-filenames": "^1.1.0",
+    "eslint-plugin-react": "^6.1.2",
+    "lodash": "^4.15.0",
     "react": "15.2.1",
     "react-native": "0.31.0"
   }
