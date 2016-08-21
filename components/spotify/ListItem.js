@@ -14,7 +14,7 @@ const ListItem = ({ index, text, imageUrl, navState, navigator }) => {
       underlayColor={ '#2b2b2b' }
       onPress={ () => navigator.push(navState) }>
 
-      <FadeInView delay={ index * 25 }>
+      <FadeInView delay={ index * 20 }>
         <View style={ styles.mediaObject }>
           <Image source={ image } style={ styles.image } />
           <Text style={ styles.text }>{ text }</Text>

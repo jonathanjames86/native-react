@@ -8,7 +8,7 @@ export function get(url) {
 export function searchFor(query) {
   // console.log(query)
   const requestUrl = (
-    `https://api.spotify.com/v1/search?q=${query}&type=artist`
+    `https://api.spotify.com/v1/search?q=${query}&type=artist&limit=50`
   );
 
   return get(requestUrl)
