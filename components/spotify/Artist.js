@@ -12,7 +12,6 @@ const Artist = ({ url }) => {
       borderLeftColor: '#2b2b2b',
       borderLeftWidth: 1,
       flex: 1,
-      marginTop: 64,
     }}>
       <WebView
         style={{

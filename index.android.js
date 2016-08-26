@@ -6,6 +6,7 @@ import {
   Text,
   View,
   Navigator,
+  AsyncStorage,
 } from 'react-native';
 
 import Root from './components/Root';
