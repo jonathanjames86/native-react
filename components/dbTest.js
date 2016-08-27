@@ -7,7 +7,12 @@ import {
   LayoutAnimation,
   TouchableHighlight,
 } from 'react-native';
+import MapView from 'react-native-maps';
+
 export default class DbTest extends Component {
+
+
+
 
   onButtonPress() {
     this.props.navigator.push({
@@ -16,6 +21,7 @@ export default class DbTest extends Component {
   }
 
 render(){
+  const { region } = this.props;
   return(
     <View style={{flex: 1, backgroundColor: "#0E0F1A",}}>
       <Text style={styles.testHeader}>
@@ -27,6 +33,16 @@ render(){
       <Text style={styles.begin}>
       Begin RN Test</Text>
       </TouchableHighlight>
+      <MapView
+                    style={styles.map}
+                    region={{
+                        latitude: 37.78825,
+                        longitude: -122.4324,
+                        latitudeDelta: 0.015,
+                        longitudeDelta: 0.0121,
+                    }}
+                    >
+        </MapView>
     </View>
 
     )
@@ -66,7 +82,14 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#0093ad',
   },
+  map: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    height: 400,
+    width: 400,
+  },
 
 })
-
-export default DbTest

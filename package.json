@@ -11,9 +11,12 @@
     "eslint-config-defaults": "^9.0.0",
     "eslint-plugin-filenames": "^1.1.0",
     "eslint-plugin-react": "^6.1.2",
+    "fb-watchman": "^1.9.0",
     "lodash": "^4.15.0",
     "react": "15.2.1",
     "react-native": "0.31.0",
+    "react-native-android-mapview": "^0.18.1",
+    "react-native-gmaps": "^1.0.9",
     "react-native-maps": "^0.7.1"
   }
 }
