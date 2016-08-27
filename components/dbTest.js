@@ -11,44 +11,27 @@ import MapView from 'react-native-maps';
 
 export default class DbTest extends Component {
 
+  constructor() {
+      super();
+    }
 
+    render() {
+      return (
+        <MapView
+          style={ styles.map }
+          initialRegion={{
+            latitude: 37.78825,
+            longitude: -122.4324,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          }}
+        />
+      );
+    }
 
-
-  onButtonPress() {
-    this.props.navigator.push({
-      name: 'upLoad'
-    })
   }
 
-render(){
-  const { region } = this.props;
-  return(
-    <View style={{flex: 1, backgroundColor: "#0E0F1A",}}>
-      <Text style={styles.testHeader}>
-        Test #2: Data Base API
-      </Text>
-      <Text style={styles.bottomBorder}>
-      </Text>
-      <TouchableHighlight onPress={() => this.onButtonPress()} style={styles.button} >
-      <Text style={styles.begin}>
-      Begin RN Test</Text>
-      </TouchableHighlight>
-      <MapView
-                    style={styles.map}
-                    region={{
-                        latitude: 37.78825,
-                        longitude: -122.4324,
-                        latitudeDelta: 0.015,
-                        longitudeDelta: 0.0121,
-                    }}
-                    >
-        </MapView>
-    </View>
 
-    )
-  }
-
-}
 
 const styles = StyleSheet.create({
   testHeader: {
@@ -82,14 +65,21 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#0093ad',
   },
-  map: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    height: 400,
-    width: 400,
-  },
+  container: {
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  justifyContent: 'flex-end',
+  alignItems: 'center',
+},
+map: {
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+},
 
 })
