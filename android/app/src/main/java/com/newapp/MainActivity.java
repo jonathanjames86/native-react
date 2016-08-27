@@ -1,5 +1,6 @@
 package com.newapp;
 
+import com.rota.rngmaps.RNGMapsPackage;
 import com.facebook.react.ReactActivity;
 
 public class MainActivity extends ReactActivity {
