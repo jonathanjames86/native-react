@@ -4,6 +4,7 @@ import {
   Text,
   Image,
   View,
+  ScrollView,
   LayoutAnimation,
   TouchableHighlight,
 } from 'react-native';
@@ -17,16 +18,68 @@ export default class UploadTest extends Component {
 
 render(){
   return(
-    <View style={{flex: 1, backgroundColor: "#0E0F1A",}}>
+    <View style={{flex: 1, backgroundColor: "#0E0F1A",  justifyContent:"space-between", alignItems: 'center'}}>
       <Text style={styles.testHeader}>
         Test #3: Data Base Upload API
       </Text>
       <Text style={styles.bottomBorder}>
       </Text>
+      <Text style={styles.testHeader}>IMAGES > 2mp</Text>
+      <ScrollView>
+        <Image source={{uri: 'http://utbgeek.com/home/bradu25/public_html/utbgeek/wp-content/uploads/2016/08/adam_west_burt_ward.jpg'}}
+              style={styles.canvas} />
+        <Image source={{uri: 'http://media.dcentertainment.com/sites/default/files/files/2010/02/icons-revised-2-sm.jpg'}}
+            style={styles.canvas} />
+        <Image source={{uri: 'http://media.dcentertainment.com/sites/default/files/GalleryComics_1920x1080_20151118_Batman-Europa-1__563919e27b1356.02940271.jpg'}}
+            style={styles.canvas} />
+        <Image source={{uri: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-369200.jpg'}}
+            style={styles.canvas} />
+        <Image source={{uri: 'https://larryfire.files.wordpress.com/2011/02/oct100261.jpg'}}
+            style={styles.canvas} />
+        <Image source={{uri: 'https://speakeasyohiou.files.wordpress.com/2015/10/cover-bman.jpg'}}
+            style={styles.canvas} />
+        <Image source={{uri: 'http://utbgeek.com/home/bradu25/public_html/utbgeek/wp-content/uploads/2016/08/adam_west_burt_ward.jpg'}}
+                  style={styles.canvas} />
+        <Image source={{uri: 'http://media.dcentertainment.com/sites/default/files/files/2010/02/icons-revised-2-sm.jpg'}}
+                style={styles.canvas} />
+        <Image source={{uri: 'http://media.dcentertainment.com/sites/default/files/GalleryComics_1920x1080_20151118_Batman-Europa-1__563919e27b1356.02940271.jpg'}}
+                style={styles.canvas} />
+        <Image source={{uri: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-369200.jpg'}}
+                style={styles.canvas} />
+        <Image source={{uri: 'https://larryfire.files.wordpress.com/2011/02/oct100261.jpg'}}
+                style={styles.canvas} />
+        <Image source={{uri: 'https://speakeasyohiou.files.wordpress.com/2015/10/cover-bman.jpg'}}
+                style={styles.canvas} />
+                <Image source={{uri: 'http://utbgeek.com/home/bradu25/public_html/utbgeek/wp-content/uploads/2016/08/adam_west_burt_ward.jpg'}}
+                      style={styles.canvas} />
+                <Image source={{uri: 'http://media.dcentertainment.com/sites/default/files/files/2010/02/icons-revised-2-sm.jpg'}}
+                    style={styles.canvas} />
+                <Image source={{uri: 'http://media.dcentertainment.com/sites/default/files/GalleryComics_1920x1080_20151118_Batman-Europa-1__563919e27b1356.02940271.jpg'}}
+                    style={styles.canvas} />
+                <Image source={{uri: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-369200.jpg'}}
+                    style={styles.canvas} />
+                <Image source={{uri: 'https://larryfire.files.wordpress.com/2011/02/oct100261.jpg'}}
+                    style={styles.canvas} />
+                <Image source={{uri: 'https://speakeasyohiou.files.wordpress.com/2015/10/cover-bman.jpg'}}
+                    style={styles.canvas} />
+                <Image source={{uri: 'http://utbgeek.com/home/bradu25/public_html/utbgeek/wp-content/uploads/2016/08/adam_west_burt_ward.jpg'}}
+                          style={styles.canvas} />
+                <Image source={{uri: 'http://media.dcentertainment.com/sites/default/files/files/2010/02/icons-revised-2-sm.jpg'}}
+                        style={styles.canvas} />
+                <Image source={{uri: 'http://media.dcentertainment.com/sites/default/files/GalleryComics_1920x1080_20151118_Batman-Europa-1__563919e27b1356.02940271.jpg'}}
+                        style={styles.canvas} />
+                <Image source={{uri: 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-369200.jpg'}}
+                        style={styles.canvas} />
+                <Image source={{uri: 'https://larryfire.files.wordpress.com/2011/02/oct100261.jpg'}}
+                        style={styles.canvas} />
+                <Image source={{uri: 'https://speakeasyohiou.files.wordpress.com/2015/10/cover-bman.jpg'}}
+                        style={styles.canvas} />
+      </ScrollView>
       <TouchableHighlight onPress={() => this.onButtonPress()} style={styles.button} >
       <Text style={styles.begin}>
       Begin RN Test</Text>
       </TouchableHighlight>
+
     </View>
 
     )
@@ -58,15 +111,17 @@ const styles = StyleSheet.create({
   button: {
     height: 40,
     width: 150,
-    marginLeft: 100,
-    marginTop: 50,
-    marginBottom: 50,
+    marginBottom: 10,
     backgroundColor: "#0B78E4",
     borderRadius: 10,
     borderWidth: 1,
     borderColor: '#0093ad',
   },
+  canvas: {
+  height: 355,
+  width: 300,
+  margin:10,
 
-})
 
-export default UploadTest
+   },
+});
